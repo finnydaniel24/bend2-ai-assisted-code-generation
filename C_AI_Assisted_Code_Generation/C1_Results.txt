@@ -1,0 +1,65 @@
+PART C – EXPERIMENT C1
+AI-Assisted Code Generation and Formal Proof Verification
+
+1. Objective
+To evaluate whether AI can generate a Bend2 program and a formal proof for a simple mathematical property.
+
+2. Mathematical Property
+Addition of zero:
+add(x, 0) = x
+
+3. Files Created
+- Code.bend: Addition implementation.
+- LAWS.bend: Human-written mathematical specification.
+- PROOF.bend: AI-generated proof, subsequently corrected.
+
+4. Proof Method
+Mathematical induction.
+
+Base case:
+x = 0
+
+Inductive case:
+x = 1 + p
+
+5. Experiment Results
+
+Attempt 1:
+Result: Failed.
+Reason: Invalid import syntax.
+
+Attempt 2:
+Result: Failed.
+Reason: The proof referred to Code.add, but Bend2 expected Nat.add.
+
+Attempt 3:
+Result: Passed.
+Correction: Replaced Code.add with Nat.add in the induction step.
+
+6. Final Verification
+
+Command:
+bend PROOF.bend
+
+Output:
+ALL PROOFS CHECK
+Use --verdict for mathematical validity.
+
+Additional command:
+bend PROOF.bend --verdict
+
+Output:
+ALL PROOFS CHECK
+
+7. Observations
+- AI helped generate the initial implementation and proof structure.
+- The initial generated proof contained syntax and expression-reference errors.
+- Bend2 identified the errors and provided useful diagnostic messages.
+- Correcting the proof allowed it to pass verification.
+- Formal verification was important for checking the generated proof rather than relying only on AI output.
+
+8. Conclusion
+This experiment demonstrates that AI can assist with generating formal proofs in Bend2. However, the generated output may contain errors and requires human review and correction. Bend2's proof checker provides an additional verification mechanism.
+
+Note:
+This result applies to the tested addition property only. It does not demonstrate that all AI-generated programs or proofs are correct.

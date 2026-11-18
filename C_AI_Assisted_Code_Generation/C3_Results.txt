@@ -1,0 +1,57 @@
+PART C – EXPERIMENT C3
+Error Handling and Static Type Safety
+
+1. Objective
+To evaluate how Bend2 handles invalid types and undefined function references in source code.
+
+2. Test 1 – Type Mismatch
+
+File: C3_Invalid_Types.bend
+
+Test:
+A String value ("20") was passed to a function expecting Nat.
+
+Command:
+bend C3_Invalid_Types.bend
+
+Actual result:
+SOME PROOFS FAIL
+
+Error:
+expected : Nat
+observed : String
+
+Status: REJECTED
+
+Observation:
+Bend2 detected the type mismatch during checking.
+
+3. Test 2 – Undefined Function
+
+File: C3_Undefined_Function.bend
+
+Test:
+The program called an undefined function named unknown_function.
+
+Command:
+bend C3_Undefined_Function.bend
+
+Actual result:
+SOME PROOFS FAIL
+
+Error:
+expected : a defined name
+observed : unknown_function
+
+Status: REJECTED
+
+Observation:
+Bend2 detected that the referenced function was not defined.
+
+4. Overall Results
+- Type mismatch: Detected.
+- Undefined function: Detected.
+- Both invalid programs were rejected during checking.
+
+5. Conclusion
+These experiments demonstrate that Bend2 detects the tested type errors and undefined function references before execution. This provides useful protection against certain coding mistakes, although it does not guarantee that a program is logically correct.

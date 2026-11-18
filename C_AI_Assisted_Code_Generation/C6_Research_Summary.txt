@@ -1,0 +1,104 @@
+PART C – FINAL RESEARCH SUMMARY
+AI-Assisted Code Generation, Laws, Proofs and Robustness
+
+Student: K. Finny Daniel
+Programme: MSc Cybersecurity & Data Science
+
+Bend2 Version: 2.0.40
+
+1. Research Objective
+To investigate the usefulness and limitations of AI-assisted code generation in Bend2, focusing on formal proofs, testing, error detection and ambiguous requirements.
+
+2. Experiment C1 – AI-Assisted Formal Proofs
+Objective:
+Verify the mathematical property add(x, 0) = x.
+
+Results:
+- Initial proof failed because of invalid import syntax.
+- Second attempt failed because of an incorrect expression reference.
+- Corrected proof passed.
+- bend PROOF.bend --verdict returned ALL PROOFS CHECK.
+
+Finding:
+AI can assist with formal proof generation, but generated proofs require debugging and verification.
+
+3. Experiment C2 – Robustness Testing
+Five addition tests were executed:
+- 10 + 20 = 30
+- 0 + 0 = 0
+- 100 + 200 = 300
+- 999 + 1 = 1000
+- 1 + 0 = 1
+
+Result:
+All five tests passed.
+
+Finding:
+The implementation behaved correctly for the tested inputs. These tests do not prove correctness for every possible input.
+
+4. Experiment C3 – Error Handling
+Two invalid programs were tested.
+
+Test 1:
+A String was supplied where Nat was expected.
+Result: Bend2 rejected the type mismatch.
+
+Test 2:
+An undefined function was called.
+Result: Bend2 rejected the undefined function reference.
+
+Finding:
+Bend2 detected both tested errors during program checking.
+
+5. Experiment C4 – Ambiguous Requirements
+Requirement:
+Write a function to calculate the average of two numbers.
+
+Identified ambiguities:
+- Input numeric types.
+- Output numeric type.
+- Rounding behaviour.
+- Handling of negative values.
+
+Finding:
+Incomplete requirements can lead to different valid implementations. Human clarification is important before code generation.
+
+Note:
+This was a written analysis, not an executed coding experiment.
+
+6. Experiment C5 – Integer Division
+Input:
+5 and 2.
+
+Actual output:
+Integer average: 3
+Exact average quotient: 3
+Exact average remainder: 1
+
+Finding:
+Natural-number integer division returns the quotient and discards the fractional part. The remainder preserves additional information.
+
+The exact mathematical average is 3.5, but floating-point behaviour was not tested.
+
+7. Overall Findings
+- AI can assist with Bend2 code and proof generation.
+- Generated code may contain syntax and reference errors.
+- Bend2 provides useful compiler and proof-checking feedback.
+- Static typing detects the tested type mismatch.
+- Undefined function references are rejected.
+- Test cases help identify incorrect behaviour.
+- Ambiguous requirements need clarification.
+- Human review remains necessary.
+
+8. Limitations
+- Experiments used small programs and simple mathematical operations.
+- Only five normal and edge-style addition tests were executed.
+- No large-scale AI-generated application was evaluated.
+- No floating-point experiment was performed.
+- The proof experiment covered one mathematical property only.
+- Results should not be generalized to all Bend2 programs.
+
+9. Final Conclusion
+The experiments show that AI can be a useful assistant when developing Bend2 programs and formal proofs. However, AI-generated output is not automatically correct.
+
+Compiler feedback, proof verification, testing and human review are essential parts of a reliable AI-assisted development workflow.

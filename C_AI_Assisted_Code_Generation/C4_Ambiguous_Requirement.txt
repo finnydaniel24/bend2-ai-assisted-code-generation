@@ -1,0 +1,33 @@
+PART C – EXPERIMENT C4
+Ambiguous Requirements and AI Assumptions
+
+1. Objective
+To investigate how ambiguity in a programming requirement can affect AI-assisted code generation.
+
+2. Original Requirement
+Write a function to calculate the average of two numbers.
+
+3. Identified Ambiguities
+- Should inputs be integers or floating-point numbers?
+- Should the result preserve decimal values or be rounded?
+- How should negative numbers be handled?
+- What numeric type should the function return?
+
+4. Possible Interpretations
+
+Interpretation 1:
+Use integer inputs and return an integer result.
+The result may require rounding or truncation.
+
+Interpretation 2:
+Use floating-point inputs and return a decimal result.
+The result preserves fractional values.
+
+5. Initial Observation
+The original requirement does not specify input types, output types or rounding behaviour. An AI-generated implementation may select one interpretation without confirming the intended behaviour.
+
+6. Evaluation
+A developer should clarify the requirements before accepting the generated implementation. Test cases should include values that produce fractional averages, such as 5 and 2.
+
+7. Conclusion
+Ambiguous requirements can lead to different valid implementations. AI-assisted code generation should include requirement clarification and human review rather than relying on unstated assumptions.

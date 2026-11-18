@@ -1,0 +1,50 @@
+PART C – EXPERIMENT C2
+Robustness and Edge-Case Testing
+
+1. Objective
+To evaluate the behaviour of the Bend2 addition implementation using normal inputs, zero values and boundary-style test cases.
+
+2. Test Results
+
+Test 1:
+Input: 10 + 20
+Expected: 30
+Actual: 30
+Status: PASS
+
+Test 2:
+Input: 0 + 0
+Expected: 0
+Actual: 0
+Status: PASS
+
+Test 3:
+Input: 100 + 200
+Expected: 300
+Actual: 300
+Status: PASS
+
+Test 4:
+Input: 999 + 1
+Expected: 1000
+Actual: 1000
+Status: PASS
+
+Test 5:
+Input: 1 + 0
+Expected: 1
+Actual: 1
+Status: PASS
+
+3. Initial Code Generation Issue
+The first AI-generated test program failed because of incorrect IO syntax and an unsuitable numeric display function.
+
+The test program was corrected using a do IO<Unit> block and Nat.show().
+
+4. Final Result
+All five test cases passed.
+
+5. Conclusion
+The addition implementation behaved as expected for all five tested inputs, including zero and small boundary-style values.
+
+These tests provide limited evidence of robustness. They do not prove correctness for all possible natural-number inputs.

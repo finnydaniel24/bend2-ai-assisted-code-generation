@@ -1,0 +1,36 @@
+PART C – EXPERIMENT C5
+Ambiguous Average Requirement: Integer Division
+
+1. Objective
+To investigate how different interpretations of an ambiguous average requirement affect AI-assisted code generation and program output.
+
+2. Original Requirement
+Write a function to calculate the average of two numbers.
+
+3. Implementation
+The experiment used Bend2 built-in natural-number arithmetic:
+- Nat.add()
+- Nat.div()
+- Nat.mod()
+
+4. Test Input
+First number: 5
+Second number: 2
+
+5. Actual Output
+
+Integer average: 3
+Exact average quotient: 3
+Exact average remainder: 1
+
+6. Analysis
+The mathematical average is 3.5.
+However, Nat.div() returns the integer quotient, which is 3.
+Nat.mod() returns the remainder, which is 1.
+
+The quotient and remainder together preserve the information lost by integer division.
+
+7. Conclusion
+The experiment demonstrates that numeric types and rounding requirements must be clearly specified. An implementation using integer division may not satisfy a requirement that expects a decimal average.
+
+Bend2 version: 2.0.40.
